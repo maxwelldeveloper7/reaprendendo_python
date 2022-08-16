@@ -29,4 +29,4 @@ while(rodada <= total_de_tentativas):
     
     rodada += 1
 
-print("Fim do jogo")
+print("Fim do jogo")#continuar na aula 5 laço for
