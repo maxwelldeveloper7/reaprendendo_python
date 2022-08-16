@@ -1,16 +1,16 @@
-print("*********************************")
-print("Bem vindo ao jogo de Adivinhação!")
-print("*********************************")
+import random
 
-numero_secreto = 42
+print("\u001b[37m\u001b[44m Bem vindo ao jogo de Adivinhação! \u001b[m")
+
+numero_secreto = int(round((random.random() * 100)))
 total_de_tentativas = 3
-
+print(numero_secreto)
 
 '''
 rodada = 1
 while(rodada <= total_de_tentativas):
 
-    print("Tentativa {} de {}", format(rodada, total_de_tentativas))
+    print("Tentativa {} de {}".format(rodada, total_de_tentativas))
 
     chute = int(input("Digite o seu número: "))
     print("Você digitou ", chute)
@@ -55,4 +55,4 @@ for rodada in range(0,total_de_tentativas):
             print("O seu chute foi menor do que o número secreto")    
     
 
-print("Fim do jogo")#continuar na aula 5 laço for
+print("Fim do jogo")#continuar de aula 6 definindo um intervalo
