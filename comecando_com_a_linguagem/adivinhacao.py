@@ -3,8 +3,22 @@ import random
 print("\u001b[37m\u001b[44m Bem vindo ao jogo de Adivinhação! \u001b[m")
 
 numero_secreto = int(round((random.randrange(1,101))))
-total_de_tentativas = 3
+total_de_tentativas = 0
 print(numero_secreto)
+
+print("Qual nível de dificuldade?")
+print("(1) Fácil (2) Médio (3) Difícil")
+
+nivel = int(input("Defina um nível: "))
+
+if(nivel == 1):
+    total_de_tentativas = 20
+elif(nivel == 2):
+    total_de_tentativas = 10
+else:
+    total_de_tentativas = 5
+
+print(total_de_tentativas)
 
 '''
 rodada = 1
