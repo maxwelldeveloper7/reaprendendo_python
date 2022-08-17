@@ -2,7 +2,7 @@ import random
 
 print("\u001b[37m\u001b[44m Bem vindo ao jogo de Adivinhação! \u001b[m")
 
-numero_secreto = int(round((random.random() * 100)))
+numero_secreto = int(round((random.randrange(1,101))))
 total_de_tentativas = 3
 print(numero_secreto)
 
