@@ -45,4 +45,4 @@ def jogar():
     print("Fim do jogo")
 
 if(__name__ == "__main__"):
-    jogar()#continuar de estrutura de dados
+    jogar()#continuar de lendo um arquivo
