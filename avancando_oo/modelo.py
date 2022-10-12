@@ -42,13 +42,15 @@ class Playlist:
     def __init__(self, nome, programas):
         self.nome = nome
         self._programas = programas
+    
+    def __getitem__(self, item):
+        return self._programas[item]
 
     @property
     def listagem(self):
         return self._programas
     
-    @property
-    def tamanho(self):
+    def __len__(self):
         return len(self._programas)
 
 
@@ -70,9 +72,9 @@ atlanta.dar_likes()
 filmes_e_series = [vingadores, atlanta, demolidor, tmep]
 playlist_fim_de_semana = Playlist('fim de semana', filmes_e_series)
 
-print(f'Tamanho do playlist: {len(playlist_fim_de_semana.listagem)}')
+print(f'Tamanho do playlist: {len(playlist_fim_de_semana)}')
 
-for programa in playlist_fim_de_semana.listagem:
+for programa in playlist_fim_de_semana:
     print(programa)
 
-print(f'Tá ou não tá {demolidor in playlist_fim_de_semana.listagem}')
+print(f'Tá ou não tá {demolidor in playlist_fim_de_semana}')
