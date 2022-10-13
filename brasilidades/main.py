@@ -1,6 +1,6 @@
 from cpf import Cpf
 
-cpf = 12345678913
+cpf = '04960780622'
 
 objeto_cpf = Cpf(cpf)
 
