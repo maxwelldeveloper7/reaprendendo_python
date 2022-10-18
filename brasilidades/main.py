@@ -1,9 +1,11 @@
 import re
 from telefones import Telefones
 
-telefone = "33988117010"
+telefone = "553336211126"
 
 telefone_obj = Telefones(telefone)
+
+print(telefone_obj)
 
 '''from cpf_cnpj import Documento
 
