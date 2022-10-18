@@ -1,11 +1,18 @@
-import re
+from datas import Datas
+
+cadastro = Datas()
+
+print(cadastro.mes_cadastro())
+print(cadastro.dia_semana())
+
+'''import re
 from telefones import Telefones
 
 telefone = "553336211126"
 
 telefone_obj = Telefones(telefone)
 
-print(telefone_obj)
+print(telefone_obj)'''
 
 '''from cpf_cnpj import Documento
 
