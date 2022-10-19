@@ -1,12 +1,16 @@
 from datas import Datas
 
-cadastro = Datas()
+hoje = Datas()
+print(hoje.tempo_cadastro())
+
+
+'''cadastro = Datas()
 
 print(cadastro)
 
 #print(cadastro.mes_cadastro())
 #print(cadastro.dia_semana())
-
+'''
 '''import re
 from telefones import Telefones
 
