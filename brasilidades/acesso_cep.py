@@ -1,4 +1,5 @@
 from calendar import c
+import requests
 
 
 class BuscaEndereco:
@@ -21,3 +22,8 @@ class BuscaEndereco:
         
     def forma_cep(self):
         return f"{self.cep[:5]}-{self.cep[5:]}"
+    
+    def acessa_via_cep(self):
+        url = f"https://viacep.com.br/ws/{self.cep}/json/"
+        r = requests.get(url)
+        return r
