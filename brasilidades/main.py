@@ -2,8 +2,10 @@ from datas import Datas
 
 cadastro = Datas()
 
-print(cadastro.mes_cadastro())
-print(cadastro.dia_semana())
+print(cadastro)
+
+#print(cadastro.mes_cadastro())
+#print(cadastro.dia_semana())
 
 '''import re
 from telefones import Telefones
