@@ -1,8 +1,14 @@
-from datas import Datas
+from acesso_cep import BuscaEndereco
+
+cep = 39860000
+objeto_cep = BuscaEndereco(cep)
+
+print(objeto_cep)
+'''from datas import Datas
 
 hoje = Datas()
 print(hoje.tempo_cadastro())
-
+'''
 
 '''cadastro = Datas()
 
