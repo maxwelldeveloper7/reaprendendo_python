@@ -3,8 +3,8 @@ from acesso_cep import BuscaEndereco
 cep = 39860000
 objeto_cep = BuscaEndereco(cep)
 
-a = objeto_cep.acessa_via_cep()
-print(a)
+bairro, cidade, uf = objeto_cep.acessa_via_cep()
+print(bairro, cidade, uf)
 '''from datas import Datas
 
 hoje = Datas()
