@@ -1,8 +1,8 @@
 class FilaPrioritaria:
-    codigo:int = 0
+    codigo: int = 0
     fila = []
     clientes_atendidos = []
-    senha_atual:str = ""
+    senha_atual: str = ""
     
     def gera_senha_atual(self)-> None:
         self.senha_atual = f'NM{self.codigo}'
