@@ -5,7 +5,7 @@ class FilaPrioritaria:
     senha_atual: str = ""
     
     def gera_senha_atual(self)-> None:
-        self.senha_atual = f'NM{self.codigo}'
+        self.senha_atual = f'PR{self.codigo}'
         
     def reseta_vila(self)-> None:
         if self.codigo >= 100:
@@ -23,6 +23,15 @@ class FilaPrioritaria:
         self.clientes_atendidos.append(cliente_atual)
         return(f'Cliente atual: {cliente_atual}, digija-se ao caixa: {caixa}')
     
-    def estatistica(self, dia: str, agencia: int, flag):
-        pass
+    def estatistica(self, dia: str, agencia: int, flag: str)-> dict:
+        if flag!='detail':
+            estatisticas = {f'{agencia}-{dia}': len(self.clientes_atendidos)}
+        else:
+            estatisticas = {}
+            estatisticas['dia'] = dia
+            estatisticas['agencia'] = agencia
+            estatisticas['clientes_atendidos'] = self.clientes_atendidos
+            estatisticas['quantidade_clientes_atendidos'] = len(self.clientes_atendidos)
+        
+        return estatisticas
     
