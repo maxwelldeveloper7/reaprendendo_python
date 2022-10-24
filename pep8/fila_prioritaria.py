@@ -23,5 +23,6 @@ class FilaPrioritaria(FilaBase):
             estatisticas['dia'] = dia
             estatisticas['agencia'] = agencia
             estatisticas['clientes_atendidos'] = self.clientes_atendidos
-            estatisticas['quantidade_clientes_atendidos'] = len(self.clientes_atendidos)
-            return estatisticas
+            estatisticas['quantidade_clientes_atendidos'] = len(
+                self.clientes_atendidos)
+        return estatisticas
