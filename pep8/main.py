@@ -19,7 +19,7 @@ from fabrica_fila import FabricaFila
 # print(fila_teste_2.chama_cliente(1))
 # print(fila_teste_2.estatistica('10/01/1993', 198, 'detail'))
 
-teste_fabrica = FabricaFila.pega_fila(('prioritaria'))
+teste_fabrica = FabricaFila.pega_fila(('normal'))
 teste_fabrica.atualiza_fila()
 teste_fabrica.atualiza_fila()
 teste_fabrica.atualiza_fila()
