@@ -1,5 +1,11 @@
-from bytebank import Funcionario
+import sys
 
-lucas = Funcionario('Lucas Carvalho', 2000, 1000)
+sys.path.append("/home/maxwell/reaprendendo_python/tdd/codigo")
 
-print(lucas.idade())
+print(sys.path)
+
+import codigo
+
+# lucas = Funcionario('Lucas Carvalho', 2000, 1000)
+
+# print(lucas.idade())
