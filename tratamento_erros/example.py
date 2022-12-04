@@ -1,6 +1,12 @@
 def dividir(dividendo: int, divisor: int) -> float:
-    # print(divisor.resultado)
-    return dividendo / divisor
+    if not(isinstance(dividendo, int) and isinstance(divisor, int)):
+        raise ValueError('dividir() deve receber apenas argumentos inteiros')
+    try:
+        aux = dividendo / divisor
+    except:
+        print(f'Não foi possível dividir {dividendo} por {divisor}')
+        raise
+    return aux
 
 
 def testa_divisao(divisor: int) -> str:
@@ -9,12 +15,18 @@ def testa_divisao(divisor: int) -> str:
     
 
 
+# try:
+#     testa_divisao(2.5)
+# except ZeroDivisionError as E:
+#     print("Erro de divisão por zero")
+# # except Exception as E:
+# #     print("Tratamento genêrico")
+
+# print('Programa encerrado')
+
 try:
-    testa_divisao(0)
-# except Exception as E:
-#     print(E)
-except ZeroDivisionError as E:
-    print("Erro de divisão por zero")
-except Exception as E:
-    print("Tratamento genêrico")
-print('Programa encerrado')
+    print('o fluxo está aqui')
+    raise ValueError
+except Exception:
+    print('agora ele foi apra cá')
+print('ele enfim continua...')
