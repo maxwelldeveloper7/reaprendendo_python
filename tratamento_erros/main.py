@@ -19,9 +19,12 @@ class ContaCorrente:
     
     def __init__(self, cliente: Cliente, agencia: int, numero: int) -> None:
         self.__saldo = 100
+        self.__agencia = 0
+        self.__numero = 0
+        
         self.cliente = cliente
         self.__set_agencia(agencia)
-        self.__numero = numero
+        self.__set_numero(numero)
         ContaCorrente.total_contas_criadas += 1
         ContaCorrente.taxa_operacao = 30 / ContaCorrente.total_contas_criadas
         
@@ -31,10 +34,9 @@ class ContaCorrente:
     
     def __set_agencia(self, value):
         if not isinstance(value, int):
-            return
+            raise ValueError('O atributo agencia deve ser um inteiro', value)
         if value <= 0:
-            print('O atributo agencia deve ser maior que zero')
-            return
+            raise ValueError('O atributo agencia deve ser maior que zero')
         self.__agencia = value
 
     @property
@@ -43,9 +45,9 @@ class ContaCorrente:
     
     def __set_numero(self, value):
         if not isinstance(value, int):
-            return
+            raise ValueError('O atributo numero deve ser um inteiro')
         if value <= 0:
-            return
+            raise ValueError('O atributo numero deve ser maior que zero')
         self.__numero = value
 
     @property
@@ -55,9 +57,9 @@ class ContaCorrente:
     @saldo.setter
     def saldo(self, value):
         if not isinstance(value, int):
-            return
+            raise ValueError('O atributo saldo deve ser um inteiro')
         if value <= 0:
-            return
+            raise ValueError('O atributo saldo deve ser maior que zero')
         self.__saldo = value
     
     def transferir(self, valor: float, favorecido: Cliente) -> None:
@@ -70,6 +72,26 @@ class ContaCorrente:
         self.saldo += valor
 
 
-conta_corrente = ContaCorrente(None, 'agencia falsa', 22500)
-conta_corrente.agencia = 0
-print(conta_corrente.saldo)
+def main():
+    import sys
+    
+    contas = []
+    while True:
+        try:
+            nome = input('Nome do Cliente:\n')
+            agencia = input('Nome da agencia:\n')
+            numero = input('Numero da conta corrente:\n')
+            nome = input('Nome do Cliente:\n')
+            cliente = Cliente(nome, None, None)
+            conta_corrente = ContaCorrente(cliente, agencia, numero)
+            print(cliente.nome)
+            contas.append(conta_corrente)
+        except ValueError as E:
+            print(E.args)
+            sys.exit()
+        except KeyboardInterrupt:
+            print(f'\n\n{len(contas)}(s) contas criadas')
+            sys.exit()
+
+if __name__ == '__main__':
+    main()
