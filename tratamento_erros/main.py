@@ -17,13 +17,48 @@ class ContaCorrente:
     total_contas_criadas = 0
     taxa_operacao = None
     
-    def __init__(self, cliente: Cliente, agencia: str, numero: str) -> None:
-        self.saldo = 100
+    def __init__(self, cliente: Cliente, agencia: int, numero: int) -> None:
+        self.__saldo = 100
         self.cliente = cliente
-        self.agencia = agencia
-        self.numero = numero
+        self.__set_agencia(agencia)
+        self.__numero = numero
         ContaCorrente.total_contas_criadas += 1
-        ContaCorrente.taxa_operacao = 30 / ContaCorrente.total_contas_criadas        
+        ContaCorrente.taxa_operacao = 30 / ContaCorrente.total_contas_criadas
+        
+    @property
+    def agencia(self):
+        return self.__agencia
+    
+    def __set_agencia(self, value):
+        if not isinstance(value, int):
+            return
+        if value <= 0:
+            print('O atributo agencia deve ser maior que zero')
+            return
+        self.__agencia = value
+
+    @property
+    def numero(self):
+        return self.__numero
+    
+    def __set_numero(self, value):
+        if not isinstance(value, int):
+            return
+        if value <= 0:
+            return
+        self.__numero = value
+
+    @property
+    def saldo(self):
+        return self.__saldo
+    
+    @saldo.setter
+    def saldo(self, value):
+        if not isinstance(value, int):
+            return
+        if value <= 0:
+            return
+        self.__saldo = value
     
     def transferir(self, valor: float, favorecido: Cliente) -> None:
         favorecido.depositar(valor)
@@ -35,4 +70,6 @@ class ContaCorrente:
         self.saldo += valor
 
 
-conta_corrente = ContaCorrente(None, '00', '101')
+conta_corrente = ContaCorrente(None, 'agencia falsa', 22500)
+conta_corrente.agencia = 0
+print(conta_corrente.saldo)

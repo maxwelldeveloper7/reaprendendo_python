@@ -1,5 +1,5 @@
 def dividir(dividendo: int, divisor: int) -> float:
-    if not(isinstance(dividendo, int) and isinstance(divisor, int)):
+    if not (isinstance(dividendo, int) and isinstance(divisor, int)):
         raise ValueError('dividir() deve receber apenas argumentos inteiros')
     try:
         aux = dividendo / divisor
@@ -12,8 +12,6 @@ def dividir(dividendo: int, divisor: int) -> float:
 def testa_divisao(divisor: int) -> str:
     resultado: float = dividir(10, divisor)
     print(f'O resultado da divisão de 10 por {divisor} é {resultado}')
-    
-
 
 # try:
 #     testa_divisao(2.5)
