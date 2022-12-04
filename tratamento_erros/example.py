@@ -4,15 +4,17 @@ def dividir(dividendo: int, divisor: int) -> float:
 
 
 def testa_divisao(divisor: int) -> str:
-    try:
-        resultado: float = dividir(10, divisor)
-        print(f'O resultado da divisão de 10 por {divisor} é {resultado}')
-    except ZeroDivisionError:
-        print('Erro de divisão por zero tratado')
+    resultado: float = dividir(10, divisor)
+    print(f'O resultado da divisão de 10 por {divisor} é {resultado}')
+    
 
 
 try:
     testa_divisao(0)
-except AttributeError:
-    print('Erro de atributo tratado')
+# except Exception as E:
+#     print(E)
+except ZeroDivisionError as E:
+    print("Erro de divisão por zero")
+except Exception as E:
+    print("Tratamento genêrico")
 print('Programa encerrado')
