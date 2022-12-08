@@ -113,11 +113,5 @@ def main():
 #     breakpoint()
 #     pass
 
-try:
-    leitor = LeitorDeArquivo('arquivo.txt')
-    leitor.Ler_proxima_linha()
-    leitor.Ler_proxima_linha()
-    leitor.Ler_proxima_linha()
-finally:
-    if 'leitor' in locals():
-        leitor.fechar()
+with LeitorDeArquivo('arquivo.txt') as leitor:
+    leitor.ler_proxima_linha()
